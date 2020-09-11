@@ -11,7 +11,7 @@ const TodoAdd = () => {
   return (
     <>
       <Button style={{ marginLeft: 10 }} onClick={handleShow}>
-        Add <i class="fas fa-plus-square"></i>
+        Add <i className="fas fa-plus-square"></i>
       </Button>
 
       <Modal

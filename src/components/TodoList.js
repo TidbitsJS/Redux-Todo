@@ -13,10 +13,10 @@ class TodoList extends Component {
                 <div className="todo-text">{item.text}</div>
                 <div className="todo-action">
                   <Button variant="success">
-                    <i class="fas fa-clipboard-check"></i>
+                    <i className="fas fa-clipboard-check"></i>
                   </Button>
                   <Button variant="danger" className="delete">
-                    <i class="fas fa-trash"></i>
+                    <i className="fas fa-trash"></i>
                   </Button>
                 </div>
               </div>
