@@ -7,7 +7,7 @@ const TodoAdd = (props) => {
   const [value, setValue] = useState("");
 
   const handleClose = () => {
-    props.dispatch({ type: "ADD", payload: { text: value } });
+    if (value !== "") props.dispatch({ type: "ADD", payload: { text: value } });
     setShow(false);
     setValue("");
   };
