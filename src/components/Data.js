@@ -1,5 +1,5 @@
 export const data = [
-  { text: "Do Something" },
-  { text: "Keep Coding" },
-  { text: "You must go on" },
+  { id: 1, text: "Do Something" },
+  { id: 2, text: "Keep Coding" },
+  { id: 3, text: "You must go on" },
 ];

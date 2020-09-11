@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Button, Modal, InputGroup, FormControl } from "react-bootstrap";
+import { connect } from "react-redux";
 
-const TodoAdd = () => {
+const TodoAdd = (props) => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState("");
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    props.dispatch({ type: "ADD", payload: { text: value } });
+    setShow(false);
+    setValue("");
+  };
   const handleShow = () => setShow(true);
 
   return (
@@ -60,4 +65,4 @@ const TodoAdd = () => {
   );
 };
 
-export default TodoAdd;
+export default connect()(TodoAdd);

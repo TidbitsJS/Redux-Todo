@@ -1,31 +1,54 @@
-import React, { Component } from "react";
+import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
 import { data } from "./Data";
 
-class TodoList extends Component {
-  render() {
-    return (
-      <div>
-        <ListGroup className="todo-list">
-          {data.map((item, index) => (
-            <ListGroup.Item key={index}>
-              <div className="todo-item">
-                <div className="todo-text">{item.text}</div>
-                <div className="todo-action">
-                  <Button variant="success">
-                    <i className="fas fa-clipboard-check"></i>
-                  </Button>
-                  <Button variant="danger" className="delete">
-                    <i className="fas fa-trash"></i>
-                  </Button>
-                </div>
-              </div>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      </div>
-    );
-  }
-}
+import { connect } from "react-redux";
 
-export default TodoList;
+const TodoList = (props) => {
+  return (
+    <div>
+      <ListGroup className="todo-list">
+        {props.todos.map((item, index) => (
+          <ListGroup.Item key={index}>
+            <div className="todo-item">
+              <div
+                className="todo-text"
+                style={{
+                  textDecoration: item.done ? "line-through" : undefined,
+                }}
+              >
+                {item.text}
+              </div>
+              <div className="todo-action">
+                <Button
+                  variant="success"
+                  onClick={() =>
+                    props.dispatch({ type: "DONE", payload: { id: index } })
+                  }
+                >
+                  <i className="fas fa-clipboard-check"></i>
+                </Button>
+                <Button
+                  variant="danger"
+                  onClick={() =>
+                    props.dispatch({ type: "DELETE", payload: { id: index } })
+                  }
+                  className="delete"
+                >
+                  <i className="fas fa-trash"></i>
+                </Button>
+              </div>
+            </div>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
+  console.log({ state });
+  return { todos: state };
+};
+
+export default connect(mapStateToProps)(TodoList);
