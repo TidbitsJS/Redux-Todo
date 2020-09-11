@@ -1,24 +1,27 @@
 import React, { Component } from "react";
 import { ListGroup, Button } from "react-bootstrap";
+import { data } from "./Data";
 
 class TodoList extends Component {
   render() {
     return (
       <div>
         <ListGroup className="todo-list">
-          <ListGroup.Item>
-            <div className="todo-item">
-              <div className="todo-text">Do something</div>
-              <div className="todo-action">
-                <Button variant="success">
-                  <i class="fas fa-clipboard-check"></i>
-                </Button>
-                <Button variant="danger" className="delete">
-                  <i class="fas fa-trash"></i>
-                </Button>
+          {data.map((item, index) => (
+            <ListGroup.Item key={index}>
+              <div className="todo-item">
+                <div className="todo-text">{item.text}</div>
+                <div className="todo-action">
+                  <Button variant="success">
+                    <i class="fas fa-clipboard-check"></i>
+                  </Button>
+                  <Button variant="danger" className="delete">
+                    <i class="fas fa-trash"></i>
+                  </Button>
+                </div>
               </div>
-            </div>
-          </ListGroup.Item>
+            </ListGroup.Item>
+          ))}
         </ListGroup>
       </div>
     );
