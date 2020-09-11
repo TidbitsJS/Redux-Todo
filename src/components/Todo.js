@@ -13,6 +13,7 @@ class Todo extends Component {
             style={{
               display: "flex",
               justifyContent: "center",
+              alignItems: "end",
             }}
           >
             <h3>Daily Ikigai</h3>

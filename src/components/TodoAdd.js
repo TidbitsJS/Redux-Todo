@@ -19,12 +19,16 @@ const TodoAdd = () => {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        style={{ fontFamily: "serif" }}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Let's do this</Modal.Title>
+          <Modal.Title>Log the Todo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h5 style={{ marginBottom: "1.2rem" }}>Log your todo </h5>
+          <p style={{ marginBottom: "1.2rem", textAlign: "center" }}>
+            “The only limit to the height of your achievements is the reach of
+            your dreams and your willingness to work for them.”– Michelle Obama
+          </p>
           <InputGroup className="mb-3">
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">
