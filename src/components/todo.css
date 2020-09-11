@@ -1,3 +1,40 @@
 body {
   display: flex;
 }
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 20px;
+}
+
+.todo-list {
+  display: flex;
+  text-align: left;
+}
+
+.todo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.delete {
+  margin-left: 10px;
+}
+
+.todo-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .todo-card {
+    width: 90vw !important;
+  }
+}
