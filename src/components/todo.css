@@ -16,10 +16,11 @@ body {
 }
 
 .todo-text {
+  flex: 3;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .delete {
@@ -31,6 +32,12 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+}
+
+.todo-action {
+  display: flex;
+  flex: 1;
+  margin-left: 5px;
 }
 
 @media (max-width: 500px) {

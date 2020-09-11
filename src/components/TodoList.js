@@ -1,6 +1,5 @@
 import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
-import { data } from "./Data";
 
 import { connect } from "react-redux";
 
@@ -15,6 +14,9 @@ const TodoList = (props) => {
                 className="todo-text"
                 style={{
                   textDecoration: item.done ? "line-through" : undefined,
+                  color: item.done ? "#778899" : undefined,
+                  textDecorationColor: item.done ? "black" : undefined,
+                  textDecorationThickness: item.done ? "10%" : undefined,
                 }}
               >
                 {item.text}
