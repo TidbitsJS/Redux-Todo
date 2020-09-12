@@ -38,11 +38,16 @@ body {
   display: flex;
   flex: 1;
   margin-left: 5px;
+  justify-content: flex-end;
 }
 
 @media (max-width: 500px) {
   .todo-card {
-    width: 90vw !important;
+    width: 95vw !important;
+  }
+
+  .todo-container {
+    top: 10px;
   }
 
   .btn-success,
